@@ -1561,7 +1561,7 @@ RpiFirmwareDxeInitialize (
 
   Status = DmaAllocateBuffer (EfiBootServicesData, NUM_PAGES, &mDmaBuffer);
   if (EFI_ERROR (Status)) {
-    DEBUG ((DEBUG_ERROR, "%a: failed to allocate DMA buffer (Status == %r)\n", __func__));
+    DEBUG ((DEBUG_ERROR, "%a: failed to allocate DMA buffer (Status == %r)\n", __func__, Status));
     return Status;
   }
 
@@ -1569,7 +1569,7 @@ RpiFirmwareDxeInitialize (
   Status = DmaMap (MapOperationBusMasterCommonBuffer, mDmaBuffer, &BufferSize,
              &mDmaBufferBusAddress, &mDmaBufferMapping);
   if (EFI_ERROR (Status)) {
-    DEBUG ((DEBUG_ERROR, "%a: failed to map DMA buffer (Status == %r)\n", __func__));
+    DEBUG ((DEBUG_ERROR, "%a: failed to map DMA buffer (Status == %r)\n", __func__, Status));
     goto FreeBuffer;
   }
 

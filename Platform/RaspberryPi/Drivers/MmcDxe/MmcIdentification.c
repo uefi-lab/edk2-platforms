@@ -519,7 +519,7 @@ SdSetSpeed (
   }
 
   if (!(Buffer[3] & SD_HIGH_SPEED_SUPPORTED)) {
-    DEBUG ((DEBUG_ERROR, "%a: High Speed not supported by Card\n"));
+    DEBUG ((DEBUG_ERROR, "%a: High Speed not supported by Card\n", __func__));
     return EFI_SUCCESS;
   }
 
